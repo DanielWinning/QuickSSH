@@ -1,7 +1,12 @@
 <?php
 
 require_once dirname(__FILE__) . "/functions.php";
-$servers = require_once dirname(__FILE__) . "/../config/servers.php";
+$servers = array();
+
+if (file_exists(dirname(__FILE__) . "/../config/servers.php")) {
+    $servers = include(dirname(__FILE__) . "/../config/servers.php");
+}
+/*$servers = require_once dirname(__FILE__) . "/../config/servers.php";*/
 
 if (count($argv) < 2) {
     listCommands();
