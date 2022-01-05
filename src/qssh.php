@@ -8,6 +8,8 @@ if (count($argv) < 2) {
 } else if (count($argv) == 2) {
     if ($argv[1] == "list") {
         listAllServers($servers);
+    } else if (in_array($argv[1], ["-v", "--version"])) {
+        echo "v" . getConfigValue("version");
     } else {
         $serverToConnectTo = parseConnectionName($argv[1]);
 

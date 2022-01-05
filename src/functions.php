@@ -102,5 +102,10 @@ function setServer($name, $user, $host, $servers)
     fwrite($handler, "<?php\n\nreturn " . var_export($servers, true) . ";\n");
     fclose($handler);
     echo "The '{$name}' shortcut has been registered. You can now call qssh {$name} to connect to your server.\n";
+}
 
+function getConfigValue($key)
+{
+    $config = require dirname(__FILE__) . "/../config/qssh.php";
+    return $config[$key];
 }
