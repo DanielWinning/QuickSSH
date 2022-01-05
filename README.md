@@ -1,7 +1,7 @@
 # Quick SSH (QSSH)
 
-Quick SSH is a command line tool that allows you to save named SSH connections and
-connect to them quickly.
+QuickSSH is a command line tool that allows you to save named SSH connections and
+connect to them quickly by name. Think of QuickSSH as a simple SSH credential manager.
 
 ### Pre-requisites
 
