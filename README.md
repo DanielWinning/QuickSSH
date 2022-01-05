@@ -12,6 +12,7 @@ QuickSSH requires PHP 7.4+ to be installed and included in your `PATH`.
 1. Download the release.
 2. Extract the archive into a folder on your system. Somewhere like `C:\Program Files\qssh`
 3. Add the path to the QSSH `bin` folder to your systems `PATH` (ie. `C:\Program Files\qssh\bin`)
+4. Check QuickSSH is installed correctly by opening a new terminal and running `qssh --version`
 
 ### Usage
 
