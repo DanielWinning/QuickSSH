@@ -1,4 +1,11 @@
 #!/usr/bin/env php
 <?php
 
+$vendor = dirname(__FILE__) . "/../vendor";
+
+if (!file_exists($vendor)) {
+    $shellScript = dirname(__FILE__) . "/composer.sh";
+    shell_exec("$shellScript");
+}
+
 require_once dirname(__FILE__) . "/../src/qssh.php";

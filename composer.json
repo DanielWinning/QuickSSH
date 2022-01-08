@@ -1,0 +1,21 @@
+{
+    "name": "dannyxcii/quick-ssh",
+    "description": "A command line tool for easy remote server access by name.",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "QuickSSH\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danny",
+            "email": "daniel@winningwebdesign.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "bramus/ansi-php": "~3.1"
+    },
+    "version": "0.3.0"
+}
