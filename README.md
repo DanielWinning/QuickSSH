@@ -5,7 +5,11 @@ connect to them quickly by name. Think of QuickSSH as a simple SSH credential ma
 
 ### Pre-requisites
 
-QuickSSH requires **PHP 7.4+** and **Composer** to be installed and included in your `PATH`.
+QuickSSH requires **PHP 7.4+** and **Composer**<span style="color: red; font-weight: bold">*</span> to 
+be installed and included in your `PATH`.
+
+<span style="color: red; font-weight: bold">*</span> On initial run, `composer install` is run to 
+install the dependencies.
 
 ### Installation
 
