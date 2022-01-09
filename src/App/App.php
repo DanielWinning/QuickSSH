@@ -23,6 +23,8 @@ class App
         $this->registerCommand("list", new Commands\ListServers());
         $this->registerCommand("set", new Commands\SetServer());
         $this->registerCommand("unset", new Commands\UnsetServer());
+        $this->registerCommand("--help", new Commands\Help());
+        $this->registerCommand("--version", new Commands\Version());
         $this->servers = $this->getServers();
     }
 
@@ -100,6 +102,16 @@ class App
         } else {
             Error::print("Server not found", $console);
         }
+    }
 
+    public function getVersion()
+    {
+        $composerJson = json_decode(file_get_contents(dirname(__FILE__) . "/../../composer.json"));
+        return $composerJson->version;
+    }
+
+    public function printVersion(Ansi $console)
+    {
+        $console->text("\e[1mv" . $this->getVersion() . "\e[0m")->lf();
     }
 }

@@ -43,7 +43,7 @@ class ListServers extends Command
                     $this->console->lf();
                     $this->console
                         ->italic()
-                        ->text("use \e[1mqssh connect <name>\e[0m \e[3mto connect to a saved server")
+                        ->text("Use \e[1mqssh connect <name>\e[0m \e[3mto connect to a saved server.")
                         ->reset()
                         ->lf();
                 } else {
