@@ -11,7 +11,7 @@ QuickSSH requires **PHP 7.4+** and **Composer** to be installed and included in 
 
 1. Download the release.
 2. Extract the archive into a folder on your system, for example `C:\Program Files\qssh`
-3. Add the path to the QuickSSH `bin` folder to your systems `PATH` (eg. `C:\Program Files\qssh\QuickSSH-0.2.0\bin`)
+3. Add the path to the QuickSSH `bin` folder to your systems `PATH` (eg. `C:\Program Files\qssh\QuickSSH-0.3.1\bin`)
 4. Check QuickSSH is installed correctly by opening a new terminal and running `qssh --version`
 
 ### Usage
@@ -20,5 +20,5 @@ QuickSSH requires **PHP 7.4+** and **Composer** to be installed and included in 
 |---------------------------------|-----------------------------|
 | `qssh set <name> <user> <host>` | Saves a new named server    |
 | `qssh connect <name>`           | Connects to a named server  |
-| `qssh list`                     | Lists all saved servers     |
 | `qssh unset <name>`             | Removes a named server      |
+| `qssh list`                     | Lists all saved servers     |
