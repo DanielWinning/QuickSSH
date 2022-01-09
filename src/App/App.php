@@ -3,6 +3,7 @@
 namespace QuickSSH\App;
 
 use Bramus\Ansi\Ansi;
+use Bramus\Ansi\ControlSequences\EscapeSequences\Enums\SGR;
 use QuickSSH\Commands as Commands;
 use QuickSSH\Error\Error;
 use QuickSSH\Server\Server;
@@ -113,5 +114,15 @@ class App
     public function printVersion(Ansi $console)
     {
         $console->text("\e[1mv" . $this->getVersion() . "\e[0m")->lf();
+    }
+
+    public function printHelp(Ansi $console)
+    {
+        $console->color()->italic()->text("The simple command line SSH credential and connection manager.")->reset()->lf()->lf();
+        $console->color([SGR::COLOR_FG_RED])->bold()->text("Usage:")->reset()->lf();
+        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh set <name> <user> <host>")->reset()->text(" - save a new named connection")->lf();
+        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh connect <name>")->reset()->text(" - connects to a saved connection")->lf();
+        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh unset <name>")->reset()->text(" - removes a saved server")->lf();
+        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh list")->reset()->text(" - lists all saved connections")->lf();
     }
 }
