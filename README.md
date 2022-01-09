@@ -16,9 +16,11 @@ QuickSSH requires **PHP 7.4+** and **Composer** to be installed and included in 
 
 ### Usage
 
-| Command                         | Description                 |
-|---------------------------------|-----------------------------|
-| `qssh set <name> <user> <host>` | Saves a new named server    |
-| `qssh connect <name>`           | Connects to a named server  |
-| `qssh unset <name>`             | Removes a named server      |
-| `qssh list`                     | Lists all saved servers     |
+| Command                         | Description                          |
+|---------------------------------|--------------------------------------|
+| `qssh set <name> <user> <host>` | Saves a new named server             |
+| `qssh connect <name>`           | Connects to a named server           |
+| `qssh unset <name>`             | Removes a named server               |
+| `qssh list`                     | Lists all saved servers              |
+ | `qssh --version`                | Displays the QuickSSH version number |
+ | `qssh --help`                   | Displays a list of valid commands    |
