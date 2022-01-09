@@ -11,7 +11,6 @@ class SetServer extends Command
     public function __construct()
     {
         parent::__construct("set", function (array $args, App $app) {
-            $this->console->lf();
             $this->console->color([SGR::COLOR_FG_PURPLE])->bold()->text("QuickSSH")->reset()->lf();
 
             if (count($args) === 5) {
@@ -21,7 +20,7 @@ class SetServer extends Command
 
                 $this->console->bold()->text("The server \e[31m{$args[2]}\e[0m\e[1m has been saved.")->reset()->lf();
             } else {
-                Error::print("Invalid arguments. Use \e[1mqssh set <name> <user> <host>\e[0m", $this->console);
+                Error::print("Invalid arguments. Use \e[1mqssh set <name> <user> <host>\e[0m to save a new connection.", $this->console);
             }
         });
     }

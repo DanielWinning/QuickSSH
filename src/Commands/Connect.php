@@ -11,7 +11,6 @@ class Connect extends Command
     public function __construct()
     {
         parent::__construct("connect", function (array $args, App $app) {
-            $this->console->lf();
             $this->console->color([SGR::COLOR_FG_PURPLE])->bold()->text("QuickSSH")->reset()->lf();
 
             if (count($args) === 3) {

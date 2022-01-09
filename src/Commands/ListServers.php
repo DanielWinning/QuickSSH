@@ -11,7 +11,6 @@ class ListServers extends Command
     public function __construct()
     {
         parent::__construct("list", function (array $args, App $app) {
-            $this->console->lf();
             $this->console->color([SGR::COLOR_FG_PURPLE])->bold()->text("QuickSSH")->reset()->lf();
 
             if (count($args) === 2) {
@@ -27,7 +26,7 @@ class ListServers extends Command
                             ->reset()
                             ->bold()
                             ->text(": ")
-                            ->color([SGR::COLOR_FG_CYAN])
+                            ->color([SGR::COLOR_FG_YELLOW_BRIGHT])
                             ->text($server->user)
                             ->reset()
                             ->color([SGR::COLOR_FG_BLUE])
@@ -59,7 +58,7 @@ class ListServers extends Command
                         ->lf();
                 }
             } else {
-                Error::print("The \e[1mlist\e[0m command does not take any arguments", $this->console);
+                Error::print("The \e[1mlist\e[0m command does not take any arguments.", $this->console);
             }
         });
     }
