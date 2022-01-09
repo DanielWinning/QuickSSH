@@ -39,7 +39,7 @@ class App
         if (array_key_exists($command, $this->commands)) {
             $this->commands[$command]->run($args, $this);
         } else {
-            Error::print("Command not found", new Ansi());
+            Error::print("Command not found. Use \e[1mqssh --help\e[0m to list available commands.", new Ansi());
         }
     }
 
@@ -58,7 +58,7 @@ class App
         return false;
     }
 
-    public function addServer(string $name, string $username, string $host)
+    public function addServer(string $name, string $username, string $host): Server
     {
         $server = new Server($name, $username, $host);
         $servers = $this->getServers();
