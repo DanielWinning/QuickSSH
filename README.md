@@ -9,7 +9,7 @@ QuickSSH requires **PHP 7.4+** and **Composer**<span style="color: red; font-wei
 be installed and included in your `PATH`.
 
 <span style="color: red; font-weight: bold">*</span> On initial run, `composer install` is run to 
-install the dependencies.
+install the required dependencies.
 
 ### Installation
 
