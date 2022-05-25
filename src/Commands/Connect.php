@@ -19,7 +19,7 @@ class Connect extends Command
                 if ($app->getServer($server)) {
                     $app->connect($server, $this->console);
                 } else {
-                    Error::print("You do not have any servers saved with that name. Use \e[1mqssh set <name> <user> <host>\e[0m to save a new connection.", $this->console);
+                    Error::print("You do not have any servers saved with that name. Use \e[1mqssh set <name> <user> <host>\e[0m to save a new connection, or \e[1mqssh list\e[0m to view available connections.", $this->console);
                 }
             } else {
                 Error::print("Invalid arguments", $this->console);

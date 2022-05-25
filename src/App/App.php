@@ -64,7 +64,12 @@ class App
         $servers = $this->getServers();
         $servers[$name] = $server;
 
-        $configFile = dirname(__FILE__) . "/../../config/servers.php";
+        if (file_exists(dirname(__FILE__) . "/../../config")) {
+            $configFile = dirname(__FILE__) . "/../../config/servers.php";
+        } else {
+            mkdir(dirname(__FILE__) . "/../../config");
+            $configFile = dirname(__FILE__) . "/../../config/servers.php";
+        }
 
         $handler = fopen($configFile, "w");
         fwrite($handler, "<?php return " . var_export($servers, true) . ";");
