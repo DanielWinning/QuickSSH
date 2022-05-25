@@ -20,6 +20,11 @@ class Command
         $this->console = new Ansi(new StreamWriter(STDOUT));
     }
 
+    protected function printHeader()
+    {
+        $this->console->color([SGR::COLOR_FG_BLUE])->bold()->text("QuickSSH")->reset()->lf();
+    }
+
     public function run(array $args, App $app)
     {
         $method = $this->method;

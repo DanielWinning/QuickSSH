@@ -10,6 +10,7 @@ class Error
 {
     public static function print(string $message, Ansi $console)
     {
+        $console->lf();
         $console->color([SGR::COLOR_FG_RED_BRIGHT])
             ->bold()
             ->text("ERROR")

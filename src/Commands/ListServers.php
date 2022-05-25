@@ -11,7 +11,7 @@ class ListServers extends Command
     public function __construct()
     {
         parent::__construct("list", function (array $args, App $app) {
-            $this->console->color([SGR::COLOR_FG_PURPLE])->bold()->text("QuickSSH")->reset()->lf();
+            $this->printHeader();
 
             if (count($args) === 2) {
                 $this->console->italic()->text("Listing your saved servers...")->reset()->lf()->lf();

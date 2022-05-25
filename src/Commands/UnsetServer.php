@@ -11,7 +11,7 @@ class UnsetServer extends Command
     public function __construct()
     {
         parent::__construct("unset", function (array $args, App $app) {
-            $this->console->color([SGR::COLOR_FG_PURPLE])->bold()->text("QuickSSH")->reset()->lf();
+            $this->printHeader();
 
             if (count($args) === 3) {
                 $this->console->italic()->text("Removing server...")->reset()->lf();

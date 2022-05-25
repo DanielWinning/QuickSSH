@@ -11,7 +11,7 @@ class SetServer extends Command
     public function __construct()
     {
         parent::__construct("set", function (array $args, App $app) {
-            $this->console->color([SGR::COLOR_FG_PURPLE])->bold()->text("QuickSSH")->reset()->lf();
+            $this->printHeader();
 
             if (count($args) === 5) {
                 $this->console->italic()->text("Saving server...")->reset()->lf();
