@@ -1,5 +1,5 @@
 {
-    "name": "dannyxcii/quick-ssh",
+    "name": "danielwinning/quick-ssh",
     "description": "A command line tool for easy remote server access by name.",
     "type": "project",
     "autoload": {
@@ -9,7 +9,7 @@
     },
     "authors": [
         {
-            "name": "Danny",
+            "name": "Daniel Winning",
             "email": "daniel@winningwebdesign.co.uk"
         }
     ],
