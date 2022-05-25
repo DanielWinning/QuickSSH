@@ -120,9 +120,43 @@ class App
     {
         $console->color()->italic()->text("The simple command line SSH credential and connection manager.")->reset()->lf()->lf();
         $console->color([SGR::COLOR_FG_RED])->bold()->text("Usage:")->reset()->lf();
-        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh set <name> <user> <host>")->reset()->text(" - save a new named connection")->lf();
-        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh connect <name>")->reset()->text(" - connects to a saved connection")->lf();
-        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh unset <name>")->reset()->text(" - removes a saved server")->lf();
-        $console->color([SGR::COLOR_FG_WHITE_BRIGHT, SGR::COLOR_BG_PURPLE_BRIGHT])->text("qssh list")->reset()->text(" - lists all saved connections")->lf();
+
+        $helpCommands = $this->getHelpCommands();
+
+        foreach ($helpCommands as $helpCommand) {
+            $this->printHelpLine($helpCommand["command"], $helpCommand["text"], $console);
+        }
+
+        /*$this->printHelpLine("qssh set <name> <user> <host>", "Save a new named connection", $console);
+        $console->color([SGR::COLOR_FG_GREEN])->bold()->text("qssh connect <name>")->reset()->lf()->text("Connects to a saved connection")->lf()->lf();
+        $console->color([SGR::COLOR_FG_GREEN])->bold()->text("qssh unset <name>")->reset()->lf()->text("Removes a saved server")->lf()->lf();
+        $console->color([SGR::COLOR_FG_GREEN])->bold()->text("qssh list")->reset()->lf()->text(" - lists all saved connections")->lf()->lf();*/
+    }
+
+    protected function printHelpLine(string $command, string $explainer, Ansi $console)
+    {
+        $console->color([SGR::COLOR_FG_GREEN])->bold()->text($command)->reset()->lf()->text($explainer)->lf()->lf();
+    }
+
+    protected function getHelpCommands(): array
+    {
+        return [
+            [
+                "command" => "qssh set <name> <user> <host>",
+                "text" => "Save a new named connection."
+            ],
+            [
+                "command" => "qssh connect <name>",
+                "text" => "Connects to a saved connection by name."
+            ],
+            [
+                "command" => "qssh unset <name>",
+                "text" => "Removes a named server from your saved servers."
+            ],
+            [
+                "command" => "qssh list",
+                "text" => "Lists all saved connections."
+            ],
+        ];
     }
 }

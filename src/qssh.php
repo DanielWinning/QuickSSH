@@ -11,7 +11,7 @@ $qssh = new App();
 $console = new Ansi(new StreamWriter(STDOUT));
 
 if (count($argv) < 2) {
-    $console->color([SGR::COLOR_FG_GREEN])->bold()->text("QuickSSH")->reset()->lf();
+    $console->color([SGR::COLOR_FG_BLUE])->bold()->text("QuickSSH")->reset()->lf();
     $qssh->printHelp($console);
 } else {
     $qssh->runCommand($argv[1], $argv);
