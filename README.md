@@ -12,7 +12,7 @@ of QuickSSH as a simple SSH credential manager.
 
 <span style="color: red; font-weight: bold">*</span> When you run `composer global require danielwinning/quick-ssh`, your terminal will `cd` into your composer installations
 vendor directory - note the path, on Windows this is usually something like `C:\Users\YourUserName\AppData\Roaming\Composer\vendor`, 
-so the directory to add to your path would be `C:\Users\YourUserName\AppData\Roaming\Composer\vendor\quick-ssh\bin`. For
+so the directory to add to your path would be `C:\Users\YourUserName\AppData\Roaming\Composer\vendor\danielwinning\quick-ssh\bin`. For
 versions prior to 0.3.5 (not recommended), follow the installation instructions at the bottom of this page.
 
 ### Usage
