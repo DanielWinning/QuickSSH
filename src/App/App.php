@@ -131,11 +131,6 @@ class App
         foreach ($helpCommands as $helpCommand) {
             $this->printHelpLine($helpCommand["command"], $helpCommand["text"], $console);
         }
-
-        /*$this->printHelpLine("qssh set <name> <user> <host>", "Save a new named connection", $console);
-        $console->color([SGR::COLOR_FG_GREEN])->bold()->text("qssh connect <name>")->reset()->lf()->text("Connects to a saved connection")->lf()->lf();
-        $console->color([SGR::COLOR_FG_GREEN])->bold()->text("qssh unset <name>")->reset()->lf()->text("Removes a saved server")->lf()->lf();
-        $console->color([SGR::COLOR_FG_GREEN])->bold()->text("qssh list")->reset()->lf()->text(" - lists all saved connections")->lf()->lf();*/
     }
 
     protected function printHelpLine(string $command, string $explainer, Ansi $console)
