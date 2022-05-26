@@ -26,6 +26,7 @@ class App
         $this->registerCommand("unset", new Commands\UnsetServer());
         $this->registerCommand("--help", new Commands\Help());
         $this->registerCommand("--version", new Commands\Version());
+        $this->registerCommand("-v", new Commands\Version());
         $this->servers = $this->getServers();
     }
 
@@ -156,7 +157,7 @@ class App
             [
                 "command" => "qssh list",
                 "text" => "Lists all saved connections."
-            ],
+            ]
         ];
     }
 }
